@@ -51,8 +51,6 @@ var facts = [
 bool popupVisibility = false;
 
 
-
-
 class tileGame extends StatefulWidget {
   const tileGame({ Key? key }) : super(key: key);
 
@@ -190,7 +188,7 @@ class _boardState extends State<board> {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 80,
-                            color: Colors.white
+                            color: textColor
                           ),
                         ),
                     ),
@@ -227,7 +225,7 @@ class _boardState extends State<board> {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 80,
-                            color: Colors.white
+                            color: textColor
                           ),
                         ),
                     ),
@@ -237,7 +235,9 @@ class _boardState extends State<board> {
 
               InkWell(
                 onTap: (){
-                  textVisibility3 = true;
+                  setState(() {
+                    textVisibility3 = true;
+                  });
                   count = count - 1;
                   if(randomNums[2]==7){
                     Navigator.pushNamed(context, '/won');
@@ -264,7 +264,7 @@ class _boardState extends State<board> {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 80,
-                            color: Colors.white
+                            color: textColor
                           ),
                         ),
                     ),
@@ -277,11 +277,13 @@ class _boardState extends State<board> {
             children: [
               InkWell(
                 onTap: (){
-                  textVisibility4 = true;
+                  setState(() {
+                    textVisibility4 = true;
+                  });
+                  count = count - 1;
                   if(randomNums[3]==7){
                     Navigator.pushNamed(context, '/won');
                   }else{
-                    count = count - 1;
                     setState(() {
                       if(count == 1){
                         Navigator.pushNamed(context, '/gameOver');
@@ -304,7 +306,7 @@ class _boardState extends State<board> {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 80,
-                            color: Colors.white
+                            color: textColor
                           ),
                         ),
                     ),
@@ -312,7 +314,9 @@ class _boardState extends State<board> {
               ),
               InkWell(
                 onTap: (){
-                  textVisibility5 = true;
+                  setState(() {
+                    textVisibility5 = true;
+                  });
                   count = count - 1;
                   if(randomNums[4]==7){
                     Navigator.pushNamed(context, '/won');
@@ -339,7 +343,7 @@ class _boardState extends State<board> {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 80,
-                            color: Colors.white
+                            color: textColor
                           ),
                         ),
                     ),
@@ -347,7 +351,9 @@ class _boardState extends State<board> {
               ),
               InkWell(
                 onTap: (){
-                  textVisibility6 = true;
+                  setState(() {
+                    textVisibility6 = true;
+                  });
                   count = count - 1;
                   if(randomNums[5]==7){
                     Navigator.pushNamed(context, '/won');
@@ -374,7 +380,7 @@ class _boardState extends State<board> {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 80,
-                            color: Colors.white
+                            color: textColor
                           ),
                         ),
                     ),
@@ -387,8 +393,10 @@ class _boardState extends State<board> {
             children: [
               InkWell(
                 onTap: (){
+                  setState(() {
+                    textVisibility7 = true;
+                  });
                   count = count - 1;
-                  textVisibility7 = true;
                   if(randomNums[6]==7){
                     Navigator.pushNamed(context, '/won');
                   }else{
@@ -414,7 +422,7 @@ class _boardState extends State<board> {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 80,
-                            color: Colors.white
+                            color: textColor
                           ),
                         ),
                     ),
@@ -422,7 +430,9 @@ class _boardState extends State<board> {
               ),
               InkWell(
                 onTap: (){
-                  textVisibility8 = true;
+                  setState(() {
+                    textVisibility8 = true;
+                  });
                   count = count - 1;
                  if(randomNums[7]==7){
                     Navigator.pushNamed(context, '/won');
@@ -449,7 +459,7 @@ class _boardState extends State<board> {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 80,
-                            color: Colors.white
+                            color: textColor
                           ),
                         ),
                     ),
@@ -457,7 +467,9 @@ class _boardState extends State<board> {
               ),
               InkWell(
                 onTap: (){
-                  textVisibility9 = true;
+                  setState(() {
+                    textVisibility9 = true;
+                  });
                   count = count - 1;
                   if(randomNums[8]==7){
                     Navigator.pushNamed(context, '/won');
@@ -485,7 +497,7 @@ class _boardState extends State<board> {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 80,
-                            color: Colors.white
+                            color: textColor
                           ),
                         ),
                     ),
@@ -497,7 +509,7 @@ class _boardState extends State<board> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Text(
-              'You have only 3 chances',
+              '${count-1} chances left',
                 style: TextStyle(
                   color: chanceTextColor,
                   fontSize: 23
@@ -546,7 +558,8 @@ class _funFactState extends State<funFact> {
             'Fun Fact about 7   :)',
             style: TextStyle(
               color: textColor,
-              fontSize: 25
+              fontSize: 20,
+              fontFamily: 'Ubuntuu'
             ),
           ),
           Text(
@@ -554,7 +567,9 @@ class _funFactState extends State<funFact> {
             textAlign: TextAlign.center,
             style: TextStyle(
               color: textColor,
-              fontSize: 25
+              fontSize: 25,
+              fontFamily: 'Ubuntuu',
+              fontWeight: FontWeight.bold
             ),
           ),
           SizedBox(height: 30,)

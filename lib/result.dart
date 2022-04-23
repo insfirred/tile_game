@@ -13,18 +13,20 @@ class _popupState extends State<popup> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.grey[900],
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children:[
             Container(
             width: double.infinity,
             height: 500,
-            color: Colors.white,
+            color: Colors.grey[900],
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text('Uh Oh :(    Try Again',textAlign: TextAlign.center,style: TextStyle(fontSize: 40),),
+                Text('Uh Oh :(    Try Again',textAlign: TextAlign.center,style: TextStyle(color: Colors.white ,fontSize: 40),),
                 FloatingActionButton(
+                  backgroundColor: Colors.grey[800],
                   onPressed: (){
                     setState(() {
                       startOver();
